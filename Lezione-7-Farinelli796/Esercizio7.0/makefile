@@ -1,0 +1,14 @@
+LIBS:=`root-config --libs`
+INCS:=`root-config --cflags`
+
+compila: main.x
+
+esegui:
+	./main.x 
+
+clean:
+	rm -f *.x es7
+
+main.x: main.cpp integrale.h funzionebase.h
+	g++ -o main main.cpp -std=C++11 ${INCS} ${LIBS}
+
